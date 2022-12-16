@@ -1,12 +1,15 @@
+import { Rule } from "sanity";
+
 export default {
     name: 'post',
     type: 'document',
-    title: 'Post',
+    title: 'Posts',
     fields: [
         {
             name: 'title',
             type: 'string',
-            title: 'Title'
+            title: 'Title',
+            validation: (Rule: Rule) => Rule.required()
         },
         {
             name: 'thumbnail',

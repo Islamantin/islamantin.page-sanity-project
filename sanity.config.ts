@@ -2,6 +2,7 @@ import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
+import deskStructure from './deskStructure'
 
 export default defineConfig({
   name: 'islamantin-page',
@@ -10,7 +11,9 @@ export default defineConfig({
   projectId: '6403v6il',
   dataset: 'production',
 
-  plugins: [deskTool(), visionTool()],
+  plugins: [deskTool({
+    structure: deskStructure
+  }), visionTool()],
 
   schema: {
     types: schemaTypes,
