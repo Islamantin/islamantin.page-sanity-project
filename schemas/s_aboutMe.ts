@@ -14,25 +14,25 @@ export default {
       title: 'Location',
     },
     {
-      name: 'employment',
+      name: 'currentEmployment',
       type: 'employment',
       title: 'Currentely Working With',
     },
     {
       name: 'techSkills',
       type: 'array',
-      of: [{type: 'techSkill'}],
+      of: [{type: 'techSkillsSet'}],
       title: 'Tech Skills',
-    },
-    {
-      name: 'education',
-      type: 'education',
-      title: 'Education',
     },
     {
       name: 'contactDetails',
       type: 'contactDetails',
       title: 'Contact Details',
+    },
+    {
+      name: 'cv',
+      type: 'fileToDownload',
+      title: 'Curriculum Vitae',
     },
   ],
 }
@@ -43,9 +43,9 @@ export const employment = {
   title: 'Employment',
   fields: [
     {
-      name: 'organisation',
+      name: 'organisationName',
       type: 'string',
-      title: 'Organisation',
+      title: 'Organisation Name',
     },
     {
       name: 'link',
@@ -55,33 +55,23 @@ export const employment = {
   ],
 }
 
-export const education = {
-  name: 'education',
-  type: 'object',
-  title: 'Education',
+export const fileToDownload = {
+  name: 'fileToDownload',
+  type: 'file',
+  title: 'File To Download',
   fields: [
     {
-      name: 'university',
-      type: 'string',
-      title: 'University',
-    },
-    {
-      name: 'faculty',
-      type: 'string',
-      title: 'Faculty',
-    },
-    {
-      name: 'degree',
-      type: 'string',
-      title: 'Degree',
-    },
-  ],
+        name: 'description',
+        type: 'string',
+        title: 'Description'
+      },
+  ]
 }
 
-export const techSkill = {
-  name: 'techSkill',
+export const techSkillsSet = {
+  name: 'techSkillsSet',
   type: 'object',
-  title: 'Tech Skill',
+  title: 'Tech Skills Set',
   fields: [
     {
       name: 'fieldName',
@@ -90,9 +80,10 @@ export const techSkill = {
       validation: (Rule: Rule) => Rule.required(),
     },
     {
-      name: 'content',
-      type: 'string',
-      title: 'Content',
+      name: 'technologies',
+      type: 'array',
+      of: [{type: 'string'}],
+      title: 'Technologies',
       validation: (Rule: Rule) => Rule.required(),
     },
   ],
