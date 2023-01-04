@@ -1,9 +1,2 @@
-# Sanity Clean Content Studio
-
-Congratulations, you have now installed the Sanity Content Studio, an open source real-time content editing environment connected to the Sanity backend.
-
-Now you can do the following things:
-
-- [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
-- [Join the community Slack](https://slack.sanity.io/?utm_source=readme)
-- [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)
+This is [Sanity.io](https://www.sanity.io/) project I'm using for my [personal page project on Next.js](https://github.com/Islamantin/islamantin.page).
+Here you can see the schemas I use to manage the data on the site.
