@@ -1,4 +1,4 @@
 import post from './post';
-import aboutMe, { employment, techSkillsSet, contactDetails, fileToDownload } from './s_aboutMe';
+import aboutMe, { labledLink, labledList, fileToDownload } from './s_aboutMe';
 
-export const schemaTypes = [aboutMe, employment, techSkillsSet, contactDetails, fileToDownload, post]
+export const schemaTypes = [aboutMe, labledLink, labledList, fileToDownload, post]

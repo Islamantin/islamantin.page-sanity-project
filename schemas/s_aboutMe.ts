@@ -15,18 +15,19 @@ export default {
     },
     {
       name: 'currentEmployment',
-      type: 'employment',
+      type: 'labledLink',
       title: 'Currentely Working With',
     },
     {
       name: 'techSkills',
       type: 'array',
-      of: [{type: 'techSkillsSet'}],
+      of: [{type: 'labledList'}],
       title: 'Tech Skills',
     },
     {
       name: 'contactDetails',
-      type: 'contactDetails',
+      type: 'array',
+      of: [{type: 'labledLink'}],
       title: 'Contact Details',
     },
     {
@@ -37,20 +38,45 @@ export default {
   ],
 }
 
-export const employment = {
-  name: 'employment',
+export const labledLink = {
+  name: 'labledLink',
   type: 'object',
-  title: 'Employment',
+  title: 'Labled Link',
   fields: [
     {
-      name: 'organisationName',
+      name: 'lable',
       type: 'string',
-      title: 'Organisation Name',
+      title: 'Lable',
+      validation: (Rule: Rule) => Rule.required(),
     },
     {
       name: 'link',
       type: 'url',
       title: 'Link',
+      validation: (Rule: Rule) => Rule.required().uri({
+        scheme: ['http', 'https', 'mailto', 'tel']
+      })
+    },
+  ],
+}
+
+export const labledList = {
+  name: 'labledList',
+  type: 'object',
+  title: 'Labled list',
+  fields: [
+    {
+      name: 'lable',
+      type: 'string',
+      title: 'Lable',
+      validation: (Rule: Rule) => Rule.required(),
+    },
+    {
+      name: 'list',
+      type: 'array',
+      of: [{type: 'string'}],
+      title: 'List',
+      validation: (Rule: Rule) => Rule.required(),
     },
   ],
 }
@@ -66,49 +92,4 @@ export const fileToDownload = {
         title: 'Description'
       },
   ]
-}
-
-export const techSkillsSet = {
-  name: 'techSkillsSet',
-  type: 'object',
-  title: 'Tech Skills Set',
-  fields: [
-    {
-      name: 'fieldName',
-      type: 'string',
-      title: 'Field Name',
-      validation: (Rule: Rule) => Rule.required(),
-    },
-    {
-      name: 'technologies',
-      type: 'array',
-      of: [{type: 'string'}],
-      title: 'Technologies',
-      validation: (Rule: Rule) => Rule.required(),
-    },
-  ],
-}
-
-export const contactDetails = {
-  name: 'contactDetails',
-  type: 'object',
-  title: 'Contact Details',
-  fields: [
-    {
-      name: 'email',
-      type: 'string',
-      title: 'E-mail',
-      validation: (Rule: Rule) => Rule.email(),
-    },
-    {
-      name: 'github',
-      type: 'url',
-      title: 'GitHub Link',
-    },
-    {
-      name: 'linkedin',
-      type: 'url',
-      title: 'LinkedIn Link',
-    },
-  ],
 }
