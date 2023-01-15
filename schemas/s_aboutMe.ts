@@ -19,10 +19,10 @@ export default {
       title: 'Currentely Working With',
     },
     {
-      name: 'techSkills',
+      name: 'tools',
       type: 'array',
       of: [{type: 'labledList'}],
-      title: 'Tech Skills',
+      title: 'Tools',
     },
     {
       name: 'contactDetails',
@@ -69,14 +69,12 @@ export const labledList = {
       name: 'lable',
       type: 'string',
       title: 'Lable',
-      validation: (Rule: Rule) => Rule.required(),
     },
     {
       name: 'list',
       type: 'array',
       of: [{type: 'string'}],
       title: 'List',
-      validation: (Rule: Rule) => Rule.required(),
     },
   ],
 }
