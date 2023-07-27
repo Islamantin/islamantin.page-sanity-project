@@ -46,14 +46,13 @@ export const labledLink = {
     {
       name: 'lable',
       type: 'string',
-      title: 'Lable',
-      validation: (Rule: Rule) => Rule.required(),
+      title: 'Lable'
     },
     {
       name: 'link',
       type: 'url',
       title: 'Link',
-      validation: (Rule: Rule) => Rule.required().uri({
+      validation: (Rule: Rule) => Rule.uri({
         scheme: ['http', 'https', 'mailto', 'tel']
       })
     },
